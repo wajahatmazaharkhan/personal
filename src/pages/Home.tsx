@@ -70,6 +70,8 @@ const SparkleIcon = () => (
   </svg>
 );
 
+import portraitImg from '../assets/portrait.jpg';
+
 export const Home: React.FC = () => {
   const [activeTestimonial] = useState(0);
 
@@ -173,7 +175,7 @@ export const Home: React.FC = () => {
           <div className="hero-image-grid">
             <div className="hero-placeholder-box"></div>
             <img
-              src="/api/placeholder/400/500"
+              src={portraitImg}
               alt="WM Khan Portrait"
               className="hero-portrait"
             />
