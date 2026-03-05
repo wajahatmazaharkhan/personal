@@ -9,7 +9,7 @@ export const Research: React.FC = () => {
     ];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
+        <div id="research" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
             <h1 className="text-4xl font-black mb-12 text-center">Research Interests</h1>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

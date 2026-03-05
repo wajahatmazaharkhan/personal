@@ -196,7 +196,9 @@ export const Home: React.FC = () => {
           </div>
           <div className="hero-ctas">
             <button className="btn-primary">View Resume</button>
-            <button className="btn-outline">Research</button>
+            <a href="#research" className="btn-outline">Research</a>
+
+          
           </div>
         </div>
 
