@@ -77,7 +77,7 @@ import satya2Img from '../assets/satya_nadella_2.png';
 import elonImg from '../assets/elon_musk.png';
 
 export const Home: React.FC = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeTestimonial, setActiveTestimonial] = useState(2);
 
   const timelineItems = [
     { date: 'Jun 2017 – Jan 2018', role: "Chairman's Political Representative", highlight: false, side: 'right' },
@@ -152,12 +152,6 @@ export const Home: React.FC = () => {
 
   const testimonials = [
     {
-      name: "Sridhar Vembu",
-      role: "Ex-CEO, Zoho",
-      image: sridharImg,
-      quote: '"The work reflects a strong balance between academic rigor and real-world relevance. A thoughtful approach to research, policy engagement, and social impact is clearly visible."',
-    },
-    {
       name: "Satya Nadella",
       role: "CEO, Microsoft",
       image: satyaImg,
@@ -173,13 +167,19 @@ export const Home: React.FC = () => {
       name: "Sridhar Vembu",
       role: "Ex-CEO, Zoho",
       image: sridharImg,
-      quote: '"We must ensure that technological development remains rooted in societal benefit. This work highlights those crucial intersections."',
+      quote: '"The work reflects a strong balance between academic rigor and real-world relevance. A thoughtful approach to research, policy engagement, and social impact is clearly visible."',
     },
     {
       name: "Satya Nadella",
       role: "CEO, Microsoft",
       image: satya2Img,
       quote: '"Empowering organizations to do more requires thoughtful policy frameworks. This effort provides exactly the perspective needed."',
+    },
+    {
+      name: "Elon Musk",
+      role: "CEO, Tesla",
+      image: elonImg,
+      quote: '"We must ensure that technological development remains rooted in societal benefit. This work highlights those crucial intersections."',
     },
   ];
 
