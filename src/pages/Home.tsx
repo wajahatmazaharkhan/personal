@@ -440,8 +440,8 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="testimonial-thumbnails" style={{ display: 'flex', gap: '1rem', marginTop: '2rem', justifyContent: 'center', alignItems: 'center' }}>
-          <button onClick={() => setActiveTestimonial((prev) => Math.max(0, prev - 1))} className="thumbnail-arrow">
+        <div className="testimonial-thumbnails" style={{ display: 'flex', gap: '1rem', marginTop: '4rem', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => setActiveTestimonial((prev) => Math.max(0, prev - 1))} className="thumbnail-arrow" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-color)', fontSize: '24px', padding: '0 10px' }}>
             &lt;
           </button>
           {testimonials.map((t, i) => (
@@ -451,14 +451,17 @@ export const Home: React.FC = () => {
               alt={t.name}
               onClick={() => setActiveTestimonial(i)}
               style={{
-                width: '60px', height: '60px', borderRadius: '12px', objectFit: 'cover', cursor: 'pointer',
-                border: activeTestimonial === i ? '2px solid var(--accent-color)' : '2px solid transparent',
-                opacity: activeTestimonial === i ? 1 : 0.6,
-                transition: 'all 0.2s ease'
+                width: activeTestimonial === i ? '80px' : '70px',
+                height: activeTestimonial === i ? '80px' : '70px',
+                borderRadius: '16px', objectFit: 'cover', cursor: 'pointer',
+                boxShadow: activeTestimonial === i ? '0 0 0 3px var(--bg-color), 0 0 0 5px var(--text-color)' : 'none',
+                opacity: activeTestimonial === i ? 1 : 0.5,
+                transition: 'all 0.3s ease',
+                margin: '0 5px'
               }}
             />
           ))}
-          <button onClick={() => setActiveTestimonial((prev) => Math.min(testimonials.length - 1, prev + 1))} className="thumbnail-arrow">
+          <button onClick={() => setActiveTestimonial((prev) => Math.min(testimonials.length - 1, prev + 1))} className="thumbnail-arrow" style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-color)', fontSize: '24px', padding: '0 10px' }}>
             &gt;
           </button>
         </div>
@@ -1017,66 +1020,75 @@ export const Home: React.FC = () => {
         }
         .testimonial-main {
           display: flex;
-          gap: 30px;
-          align-items: flex-end;
-          max-width: 690px;
+          align-items: flex-start;
+          justify-content: center;
+          margin: 0 auto;
+          margin-top: 50px;
+          max-width: 900px;
         }
         .testimonial-card {
           position: relative;
-          width: 342px;
-          height: 363px;
+          width: 340px;
+          height: 380px;
           flex-shrink: 0;
           border-radius: 20px;
-          background: var(--card-color, #3E3E3E);
-          overflow: hidden;
-        }
-        .testimonial-portrait {
-          width: 302px;
-          height: 272px;
-          border-radius: 20px;
-          object-fit: cover;
-          position: absolute;
-          left: 20px;
-          top: 20px;
-        }
-        .testimonial-name-block {
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
+          background: var(--card-color);
           display: flex;
           flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          z-index: 1;
+        }
+        .testimonial-portrait {
+          width: 100%;
+          height: 250px;
+          border-radius: 12px;
+          object-fit: cover;
+          margin-bottom: 20px;
+        }
+        .testimonial-name-block {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
         .testimonial-name {
           font-size: 18px;
-          font-weight: 600;
+          font-weight: 700;
           color: var(--text-color);
         }
         .testimonial-role {
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 400;
           color: var(--text-color);
-          text-align: center;
+          opacity: 0.8;
+          margin-top: 4px;
         }
         .testimonial-quote-card {
           position: relative;
-          width: 428px;
+          width: 480px;
           flex-shrink: 0;
           border-radius: 20px;
-          border: 1px solid #8D8D8D;
-          background: rgba(62, 62, 62, 0.30);
+          border: 1px solid var(--border-color);
+          background: var(--card-color);
           padding: 40px;
+          margin-left: -50px;
+          margin-top: -60px;
+          z-index: 2;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
         .testimonial-quote-inner {
           position: absolute;
-          inset: 20px;
-          border-radius: 20px;
-          background: rgba(62, 62, 62, 0.30);
+          inset: 15px;
+          border-radius: 12px;
+          background: var(--bg-color);
+          opacity: 0.5;
         }
         .testimonial-quote {
           position: relative;
           z-index: 1;
-          font-size: 16px;
-          font-weight: 400;
+          font-size: 17px;
+          font-weight: 500;
           color: var(--text-color);
           line-height: 1.6;
           margin: 0;
