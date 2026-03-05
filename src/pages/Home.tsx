@@ -75,6 +75,7 @@ import satyaImg from '../assets/satya_nadella.png';
 import sridharImg from '../assets/sridhar_vembu.png';
 import satya2Img from '../assets/satya_nadella_2.png';
 import elonImg from '../assets/elon_musk.png';
+import kagameImg from '../assets/paul_kagame.png';
 
 export const Home: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(2);
@@ -176,9 +177,9 @@ export const Home: React.FC = () => {
       quote: '"Empowering organizations to do more requires thoughtful policy frameworks. This effort provides exactly the perspective needed."',
     },
     {
-      name: "Elon Musk",
-      role: "CEO, Tesla",
-      image: elonImg,
+      name: "Paul Kagame",
+      role: "President, Rwanda",
+      image: kagameImg,
       quote: '"We must ensure that technological development remains rooted in societal benefit. This work highlights those crucial intersections."',
     },
   ];
