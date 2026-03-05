@@ -71,9 +71,13 @@ const SparkleIcon = () => (
 );
 
 import portraitImg from '../assets/portrait.jpg';
+import satyaImg from '../assets/satya_nadella.png';
+import sridharImg from '../assets/sridhar_vembu.png';
+import satya2Img from '../assets/satya_nadella_2.png';
+import elonImg from '../assets/elon_musk.png';
 
 export const Home: React.FC = () => {
-  const [activeTestimonial] = useState(0);
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const timelineItems = [
     { date: 'Jun 2017 – Jan 2018', role: "Chairman's Political Representative", highlight: false, side: 'right' },
@@ -150,8 +154,32 @@ export const Home: React.FC = () => {
     {
       name: "Sridhar Vembu",
       role: "Ex-CEO, Zoho",
-      image: "/api/placeholder/400/500",
+      image: sridharImg,
       quote: '"The work reflects a strong balance between academic rigor and real-world relevance. A thoughtful approach to research, policy engagement, and social impact is clearly visible."',
+    },
+    {
+      name: "Satya Nadella",
+      role: "CEO, Microsoft",
+      image: satyaImg,
+      quote: '"We are seeing a massive shift in how technology impacts policy and education. This research is highly pertinent to the coming decade of technology."',
+    },
+    {
+      name: "Elon Musk",
+      role: "CEO, Tesla",
+      image: elonImg,
+      quote: '"Building the future requires a deep understanding of the regulatory landscapes we navigate today. Important and impressive analysis."',
+    },
+    {
+      name: "Sridhar Vembu",
+      role: "Ex-CEO, Zoho",
+      image: sridharImg,
+      quote: '"We must ensure that technological development remains rooted in societal benefit. This work highlights those crucial intersections."',
+    },
+    {
+      name: "Satya Nadella",
+      role: "CEO, Microsoft",
+      image: satya2Img,
+      quote: '"Empowering organizations to do more requires thoughtful policy frameworks. This effort provides exactly the perspective needed."',
     },
   ];
 
@@ -410,6 +438,29 @@ export const Home: React.FC = () => {
             <div className="testimonial-quote-inner"></div>
             <p className="testimonial-quote">{testimonials[activeTestimonial].quote}</p>
           </div>
+        </div>
+
+        <div className="testimonial-thumbnails" style={{ display: 'flex', gap: '1rem', marginTop: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => setActiveTestimonial((prev) => Math.max(0, prev - 1))} className="thumbnail-arrow">
+            &lt;
+          </button>
+          {testimonials.map((t, i) => (
+            <img
+              key={i}
+              src={t.image}
+              alt={t.name}
+              onClick={() => setActiveTestimonial(i)}
+              style={{
+                width: '60px', height: '60px', borderRadius: '12px', objectFit: 'cover', cursor: 'pointer',
+                border: activeTestimonial === i ? '2px solid var(--accent-color)' : '2px solid transparent',
+                opacity: activeTestimonial === i ? 1 : 0.6,
+                transition: 'all 0.2s ease'
+              }}
+            />
+          ))}
+          <button onClick={() => setActiveTestimonial((prev) => Math.min(testimonials.length - 1, prev + 1))} className="thumbnail-arrow">
+            &gt;
+          </button>
         </div>
       </section>
 
